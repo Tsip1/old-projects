@@ -1,0 +1,128 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="mb-5">
+                <h3 class="footer-heading mb-4">About HomeSpace</h3>
+                <p>In the real estate calendar of Homespace you can find homes for rent, second hand apartments, apartments for rent, single family homes
+                    Penthouses and roof apartments for rent and a large selection of rental apartments photographed from real estate offices.</p>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-5 mb-lg-0">
+            <div class="row mb-5">
+                <div class="col-md-12">
+                    <h3 class="footer-heading mb-4">Navigations</h3>
+                </div>
+                <% if (UserType == 'agent'){%>
+                    <div class="col-md-6 col-lg-6">
+                        <ul class="list-unstyled">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Buy</a></li>
+                            <li><a href="#">Rent</a></li>
+                            <li><a href="#">Lease</a></li>
+                            <li><a href="#">Blog</a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <ul class="list-unstyled">
+                            <li><a href="#">My Apartments</a></li>
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                <% }
+                else if (UserType == 'administrator'){%>
+                    <div class="col-md-6 col-lg-6">
+                        <ul class="list-unstyled">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Users</a></li>
+                            <li><a href="#">Apartments</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <ul class="list-unstyled">
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                <% }
+                else { %>
+                    <div class="col-md-6 col-lg-6">
+                        <ul class="list-unstyled">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Buy</a></li>
+                            <li><a href="#">Rent</a></li>
+                            <li><a href="#">Lease</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <ul class="list-unstyled">
+                            <% if (UserType == 'customer'){%>
+                                <li><a href="#">My Account</a></li>
+                                <li><a href="#">Favor</a></li>
+                            <%}%>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+                <% }%>
+            </div>
+        </div>
+        
+
+        <div class="col-lg-4 mb-5 mb-lg-0">
+            <h3 class="footer-heading mb-4">Follow Us</h3>
+           <div>
+                <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+            </div>
+        </div>
+
+    </div>
+    <div class="row pt-5 mt-5 text-center">
+        <div class="col-md-12">
+            <p>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;</script><script>document.write(new Date().getFullYear());</script> All rights reserved | This app is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by Hadas Mazooz & Tsipora Melaver</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+
+    </div>
+</div>
+
+
+<!---------------------- Scripts  ---------------------->
+
+<!-- JQuery  -->
+<script src="javascripts/jquery-3.3.1.min.js"></script>
+<script src="javascripts/jquery-migrate-3.0.1.min.js"></script>
+<script src="javascripts/jquery-ui.js"></script>
+<script src="javascripts/jquery.stellar.min.js"></script>
+<script src="javascripts/jquery.countdown.min.js"></script>
+<script src="javascripts/jquery.magnific-popup.min.js"></script>
+
+<!-- Popper  -->
+<script src="javascripts/popper.min.js"></script>
+
+<!-- Bootstrap  -->
+<script src="javascripts/bootstrap.min.js"></script>
+<script src="javascripts/bootstrap-datepicker.min.js"></script>
+
+<!-- Carousel  -->
+<script src="javascripts/owl.carousel.min.js"></script>
+
+<!-- Media  -->
+<script src="javascripts/mediaelement-and-player.min.js"></script>
+
+<!-- Aos  -->
+<script src="javascripts/aos.js"></script>
+
+<!-- Main  -->
+<script src="javascripts/main.js"></script>
