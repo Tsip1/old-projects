@@ -1,0 +1,120 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+	  <script src="javascripts/Chart.bundle.js"></script>
+     <script src="javascripts/utils.js"></script>
+    <style>
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+    </style>
+	
+</head>
+<body class="container" dir="rtl" >
+
+    <header>
+        <% include ../partials/header1 %>
+    </header>
+
+	<section>
+		  <div id="head">
+            <div class="line">
+               <h1> <%= name %>  last year history graph </h1>
+            </div>
+         </div>
+<!--	<article class="jumbotron"> 
+	<div id="container" style="width: 75%;"> -->
+	<article class="line"> 
+	<div id="first-block" style="width:100%;">
+        <canvas id="canvas"></canvas>
+    </div>
+	    </article>
+
+	<script>	
+
+	function go()
+	{
+			
+	
+	
+
+
+	 var ctx = document.getElementById("canvas").getContext("2d");
+            window.myGraph = new Chart(ctx, {
+                type: 'line',
+                data: lineChartData,
+                options: {
+                    responsive: true,
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Chart.js line Chart'
+                    }
+                }
+            });
+
+            window.myGraph.update();
+	}
+	
+	
+
+	
+	var labels1= ["<%=months[0]%>", "<%=months[1]%>","<%=months[2]%>", "<%=months[3]%>","<%=months[4]%>","<%=months[5]%>","<%=months[6]%>","<%=months[7]%>","<%=months[8]%>","<%=months[9]%>","<%=months[10]%>","<%=months[11]%>" ,"<%=months[12]%>"];
+	<%
+	var arr2=[];
+	for (var i=0;i<12;i++)
+	for (var item in quotes[i])
+	arr2[i]=quotes[i][item];
+	%>
+	
+	//  var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+        var color = Chart.helpers.color;
+        var lineChartData = {
+		
+		labels: labels1,
+          
+		
+            datasets: [{
+             
+				data: [<%= arr2%> ] ,
+				
+            }]
+        };
+		
+        window.onload = function() {
+            var ctx = document.getElementById("canvas").getContext("2d");
+            window.myGraph = new Chart(ctx, {
+                type: 'line',
+                data: lineChartData,
+                options: {
+                    responsive: true,
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+						text: 'Chart.js line Chart' 
+                     
+                    }
+                }
+            });	   
+
+        };
+
+           
+     
+	</script>
+	<input type="button" onclick="go()" />
+
+	
+</section>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+    <header>
+        <% include ../partials/header %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>Here we'll convert currency</h1>
+            <p>It's not gonna hurt</p>
+        </div>
+    </main>
+
+	<div class="form"><h3>Exchange Currency</h3>
+
+	
+		<script>
+		function exchangeCurrency(){
+			var countFromVal = country_from.value;
+			var countToVal = country_to.value;
+
+            var tmp = countFromVal.substring(0, 6) ;
+	        var tmp2= countToVal.substring(0, 6) ;
+			
+
+			var num=0, num2;
+	
+	        var arr= ["<%= real[0] %>", "<%= real[1] %>","<%= real[2] %>", "<%= real[3] %>","<%= real[4] %>","<%= real[5] %>","<%= real[6] %>","<%= real[7] %>","<%= real[8] %>","<%= real[9] %>","<%= real[10] %>","<%= real[11] %>"];
+		
+		    for (var i=0; i<12;i++){
+				if (arr[i]==tmp){
+		
+					num=[<%= quetes  %>][i];
+					console.log(num);
+				}
+				if (arr[i]==tmp2){
+					num2=[<%= quetes  %>][i];
+					console.log(num2);
+				}
+			}
+			var result=num/num2;
+
+			document.getElementById("exchange_total").value = result.toString();
+			
+		}
+		</script>
+ 	
+     
+	
+		<p><select id="country_from">
+
+			<option value="USDAUD">Australian Dollar</option>
+			<option value="USDCAD">Canadian dollar</option>
+			<option value="USDEUR">Euro</option>
+			<option value="USDINR">Indian Rupee</option>
+			<option value="USDJPY">Japanese Yen</option>
+			<option value="USDILS">New Israeli Shekel</option>
+			<option value="USDGBP">Pound Sterling</option>
+			<option value="USDRUB">Russian Ruble</option>
+			<option value="USDSAR">Saudi Riyal</option>
+			<option value="USDZAR">South African Rand</option>
+			<option value="USDCHF">Swiss Frank</option>
+			<option value="USDAED">U.S. Dollar</option>
+	
+		</select><input type="text" name="money" id="money" value="100"/></p>
+
+		
+	
+		<p><select id="country_to">
+
+			<option value="USDAUD">Australian Dollar</option>
+			<option value="USDCAD">Canadian dollar</option>
+			<option value="USDEUR">Euro</option>
+			<option value="USDINR">Indian Rupee</option>
+			<option value="USDJPY">Japanese Yen</option>
+			<option value="USDILS">New Israeli Shekel</option>
+			<option value="USDGBP">Pound Sterling</option>
+			<option value="USDRUB">Russian Ruble</option>
+			<option value="USDSAR">Saudi Riyal</option>
+			<option value="USDZAR">South African Rand</option>
+			<option value="USDCHF">Swiss Frank</option>
+			<option value="USDAED">U.S. Dollar</option>
+	
+		</select><input type="text" name="exchange_total" id="exchange_total"/></p>
+	
+		<button id="Exchange" onclick="exchangeCurrency()">Exchange</button>
+
+	</div>
+
+</body>
+</html>

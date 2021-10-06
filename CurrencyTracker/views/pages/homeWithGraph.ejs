@@ -1,0 +1,136 @@
+﻿<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+	  <script src="javascripts/Chart.bundle.js"></script>
+     <script src="javascripts/utils.js"></script>
+ <!--   <style>
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+    </style> -->
+	
+</head>
+<!-- <body class="container" dir="rtl" > -->
+<bode class="size-1140">
+    <header>
+        <% include ../partials/header1 %>
+    </header>
+
+    <main>
+      <!--  <div class="jumbotron">
+            <h1> כותרת לגבי מהות התצוגה</h1>
+            <p>
+			<%
+	          var date = new Date();
+	         %>
+	        <span> תאריך ושעת עדכון </span>
+	        <span><%= date%></span>
+			</p>
+        </div> -->
+		<section>
+		  <div id="head">
+            <div class="line">
+               <h1>Currency Graph</h1>
+            </div>
+         </div>
+		  
+	
+	<article class="line"> 
+	<div id="first-block" style="width:100%;"> <!-- here you decide the background of the graph -->
+        <canvas id="canvas"></canvas>
+    </div>
+
+	
+  
+   </article> 
+
+	<script>	
+
+	function go() //מה אמורה לעשות הפונקציה שמופעלת כאשר לוחצים על הכפתור???
+	{
+			
+	<!-- <%= console.log(JSON.stringify(quetes)) %> -->
+	
+
+	barChartData.datasets[0].data= [<%=quetes[0]%>,<%=quetes[1]%>,<%=quetes[2]%>];
+	 var ctx = document.getElementById("canvas").getContext("2d");
+            window.myBar = new Chart(ctx, {
+                type: 'bar',
+                data: barChartData,
+                options: {
+                    responsive: true,
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Real Time Values Bar Chart'
+                    }
+                }
+            });
+
+            window.myBar.update();
+	}
+	
+	var labels1= ["<%=real[0]%>", "<%=real[1]%>","<%=real[2]%>", "<%=real[3]%>","<%=real[4]%>","<%=real[5]%>","<%=real[6]%>","<%=real[7]%>","<%=real[8]%>","<%=real[9]%>"];
+	Chart.defaults.global.defaultFontColor="black";
+
+	
+	
+	
+	  var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+        var color = Chart.helpers.color;
+        var barChartData = {
+		
+		labels: labels1,
+         
+		
+            datasets: [{
+                label: 'Dataset 1',
+                backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
+                borderColor: window.chartColors.blue,
+                borderWidth: 1  , data: [<%=quetes%> ] ,      
+            }]
+        };
+		//alert(JSON.stringify(barChartData.datasets[0].data));
+        window.onload = function() {
+            var ctx = document.getElementById("canvas").getContext("2d");
+            window.myBar = new Chart(ctx, {
+                type: 'bar',
+                data: barChartData,
+                options: {
+                    responsive: true,
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Real Time Values Bar Chart'
+                    }
+                }
+            });	   
+
+        };
+
+           
+     
+	</script>
+	<!-- <input type="button" onclick="go()" /> -->
+
+		 </section>
+
+    </main>
+	    <!-- FOOTER -->   
+      <footer>
+        <% include ../partials/footer %>
+		 
+      </footer>
+
+
+</body>
+</html>

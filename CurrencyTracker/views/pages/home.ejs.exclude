@@ -1,0 +1,81 @@
+﻿<!-- views/pages/index.ejs -->
+<!--  Not Working!!!! -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<!-- <body class="container" dir="rtl"> -->
+<body class="size-1140">
+    <header>
+        <% include ../partials/header1 %>
+    </header>
+	<section>
+	 <% include ../partials/section %>
+	</section>
+    <script type="text/javascript" src="owl-carousel/owl.carousel.js">   
+      <script type="text/javascript">
+         jQuery(document).ready(function($) {  
+           $("#owl-demo").owlCarousel({
+         	slideSpeed : 300,
+         	autoPlay : true,
+         	navigation : false,
+         	pagination : false,
+         	singleItem:true
+           });
+		  
+           $("#owl-demo2").owlCarousel({
+         	slideSpeed : 300,
+         	autoPlay : true,
+         	navigation : false,
+         	pagination : true,
+         	singleItem:true
+           });
+         });	
+          
+     
+   </script> 
+   <main>
+
+        <div class="jumbotron">
+            <h1> כותרת לגבי מהות התצוגה</h1>
+            <p>
+			<%
+	          var date = new Date();
+	         %>
+	        <span> תאריך ושעת עדכון </span>
+	        <span><%= date%></span>
+			</p>
+        </div>
+    </main> 
+<article class="jumbotron">
+
+  <table class="table  table-hover">
+  <tr >
+   <th style="text-align: center"> שם מטבע </th>
+   <th style="text-align: center"> שער נוכחי </th>
+  </tr>
+
+    <% 
+	for (var prop in quetes ) {
+	%>
+	<tr>
+	<td>
+	 <%=real[prop] %>
+	
+	</td>
+	<td>
+    <%= quetes[prop] %>
+<% } %>
+</td>
+</tr>
+  </table>  
+
+</article>
+
+ 
+
+ 
+      
+</body>
+</html>

@@ -1,0 +1,107 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- views/pages/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body>
+
+ <header>
+   <% include ../partials/header1 %>
+ </header>
+  <div style = "text-align:center;tap:100px;" >
+ <main>
+ 
+	<h2><b><i>Exchange Currency</i></b></h2>
+	<div id="first-block">
+		<script>
+		function exchangeCurrency(){
+		<!--computing the convertion-->
+			var countFromVal = country_from.value;
+			var countToVal = country_to.value;
+			var amount = CoinAmount.value;
+
+			<!--finding the names of the currencies between the data-->
+            var tmp = countFromVal.substring(0, 6) ;
+	        var tmp2= countToVal.substring(0, 6) ;
+			var num=0, num2;
+	        var arr= ["<%= real[0] %>", "<%= real[1] %>","<%= real[2] %>", "<%= real[3] %>","<%= real[4] %>","<%= real[5] %>","<%= real[6] %>","<%= real[7] %>","<%= real[8] %>","<%= real[9] %>"];
+		    for (var i=0; i<10;i++){
+				if (arr[i]==tmp){
+		     		num=[<%= quetes  %>][i];
+				}
+				if (arr[i]==tmp2){
+					num2=[<%= quetes  %>][i];
+				}
+			}
+			var result=num/num2;
+			var finalResult=result*amount;
+			document.getElementById("exchange_total").value = finalResult.toString();
+		}
+
+		</script>
+		<!-- Select bars for the currencies and a button that calls tha function above. -->
+		<h4>from &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to</h4>
+		<h5>
+	     
+	     <select name="country_to" id="country_to" style="width:200px; height:30px;">
+	
+			
+			<option value="USDUSD">U.S. Dollar</option>
+			<option value="USDILS">New Israeli Shekel</option>
+			<option value="USDCAD">Canadian dollar</option>
+			<option value="USDEUR">Euro</option>
+			<option value="USDCNY">Chinese Yuan</option>
+			<option value="USDJPY">Japanese Yen</option>
+			<option value="USDILS">New Israeli Shekel</option>
+			<option value="USDGBP">Pound Sterling</option>
+			<option value="USDRUB">Russian Ruble</option>
+			<option value="USDHKD">Hong Kong Dollar</option>
+			<option value="USDCHF">Swiss Frank</option>
+			
+	    </select>
+
+		  <select name="country_from" id="country_from" style="width:200px; height:30px;">
+		
+		
+			<option value="USDILS">New Israeli Shekel</option>
+			<option value="USDUSD">U.S. Dollar</option>
+			<option value="USDEUR">Euro</option>
+			<option value="USDCAD">Canadian dollar</option>
+			<option value="USDCNY">Chinese Yuan</option>
+			<option value="USDJPY">Japanese Yen</option>
+			<option value="USDGBP">Pound Sterling</option>
+			<option value="USDRUB">Russian Ruble</option>
+			<option value="USDHKD">Hong Kong Dollar</option>
+			<option value="USDCHF">Swiss Frank</option>
+			
+	     </select>
+	</h5>
+	
+		<h4>Please enter amount:</h4>
+		<br />
+	    <input name="CoinAmount" id="CoinAmount" type="text"/>
+		<br />
+		<br />
+		<button id="Exchange" onclick="exchangeCurrency()">Exchange</button> <br>
+		<h4> The result is: </h4>
+		<p><input type="text" name="exchange_total" id="exchange_total"/> </p>
+		 </div id="first-block">
+   </main>
+  </div>
+ </body>
+</html>
