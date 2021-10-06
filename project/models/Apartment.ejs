@@ -1,0 +1,203 @@
+const debug = require("debug")("finalProject:model-apartment");
+let mongoose = require('mongoose');
+let Schema = mongoose.Schema;
+
+
+let ApartmentScheme = new Schema({
+    address: String,
+    country: String,
+    price: Number,
+    isExclusive: Boolean,
+    roomsNumber: Number,
+    condition: String,
+    status: String
+});
+
+let Apartment = mongoose.model('Apartment', ApartmentScheme);
+debug('Apartment model created ');
+
+module.exports = Apartment;
+
+let apr;
+apr = new Apartment({
+    address: "7415 S 13th St, Ridgefield, WA 98642",
+    country: Washington,
+    price:2000,
+    isExclusive: true,
+    roomsNumber: 3,
+    condition: "Welcome home to your private, GREENBELT lot with easy freeway access and top-rated Ridgefield schools! Light and privacy abound in this open concept floor plan that offers the perfect sanctuary after a long day. With oversized bedrooms/closets and an EXTENSIVE list of included upgrades this turn-key home truly has it all. Enjoy paved walking trails through surrounding greenbelt, a community park and sport court all conveniently located in your neighborhood.",
+    status: Rent
+});
+apr.save();
+
+let apr;
+apr = new Apartment({
+    address: "821 Mantis Way UNIT 3, Las Vegas, NV 89110",
+    country: Nevada,
+    price:925,
+    isExclusive: true,
+    roomsNumber: 2,
+    condition: String,
+    status: Rent
+});
+apr.save();
+
+let apr;
+apr = new Apartment({
+    address: "18120 102nd Ave Ne, Bothell, WA 98011",
+    country: Washington,
+    price:1600,
+    isExclusive: true,
+    roomsNumber: 4,
+    condition: "The Merc is the best place to live in the city. We have lovely studio, one-, and two-bedroom apartments in Bothell, WA for rent that we know you'll love. You will be delighted at the fully equipped kitchen, energy efficient appliances, and creative design including windows that provide great lighting in all of our apartments. As a resident, you'll enjoy a parcel locker system, bike storage and rooftop deck with a big screen.",
+    status: Rent
+});
+apr.save();
+
+let apr;
+apr = new Apartment({
+    address: "608 Dorothy Ct, Incline Village, NV 89451",
+    country: Washington,
+    price:575000,
+    isExclusive: true,
+    roomsNumber: 3,
+    condition:"This spacious rambler is located on .69 acres. This home features 16-foot vaulted ceilings in the entry and living room.  floor to ceiling double-sided river rock fireplace. Large master bath with a 5 piece bathroom and walk-in closet plus french doors. There are hardwood floors, hickory cabinets, and granite counters, The home has an indoor vacuum, skylights, surround sound, air conditioning and so much more.",
+    status: Sale
+});
+apr.save();
+
+let apr;
+apr = new Apartment({
+    address: "1097 Alyssum Ct, Minden, NV 89423",
+    country: Nevada,
+    price:399000,
+    isExclusive: false,
+    roomsNumber: 2,
+    condition: "Winhaven's popular 2 bedroom patio home - one master Br and the other can be easily used as a guest suite with it's own bathroom and patio, by closing the double doors. Vaulted ceilings in LR/DR and bedrooms for a bright, airy feel. Gas log fireplace and CAC for indoor comfort and 3 patios for outdoor enjoyment. Quiet culdesac location offers convenient, low maintenance in-town Minden living. New roof in 2010. HOA takes care of all green areas outside of your fence. Winhaven has a fenced RV parking lot.",
+    status: Sale
+});
+apr.save();
+
+let apr;
+apr = new Apartment({
+    address: "6 Sager Ct, Orinda, CA 94563",
+    country: California,
+    price:950000,
+    isExclusive: true,
+    roomsNumber: 3,
+    condition: "This is an amazing opportunity for anyone looking to get into Orinda.  This home features beautiful hardwood floors and wood shelved that service to accent the walls.  The 15,000-square-foot lot gives this home great potential for expansion.  The home is nestled in a peaceful cul de sac surround by trees and greenery.  It is a private oasis just minutes from the 24 freeway and downtown Orinda.  So, you are minutes from shopping, restaurants, schools and the theater.",
+    status: Sale
+});
+apr.save();
+
+let apr;
+apr = new Apartment({
+    address: "1725 Turk St, San Francisco, CA 94115",
+    country: California,
+    price:4195,
+    isExclusive: false,
+    roomsNumber: 2,
+    condition: "Centered on Alamo Square Park, this quiet hilltop haven has a couple tricks up its sleeve. Cinematic city views, wedding cake Victorians and a bar scene that's just far enough away to not wake up the neighbors. The Divisadero strip is studded with scores of welcoming watering holes. Whether you're thirsty for locally brewed beer, a tasty glass of wine, a craft cocktail, or a stiff shot of whiskey, it's all within a couple of blocks. Bonus: there are no major hills to climb in the midst of your bar crawling.",
+    status: Rent
+});
+apr.save();
+
+let apr;
+apr = new Apartment({
+    address: "1209 W Water St Lewistown MT 59457",
+    country: California,
+    price:239000,
+    isExclusive: true,
+    roomsNumber: 3,
+    condition: "This Lemoore home features a recently remodeled kitchen complete with custom cabinets and granite counters, newer laminate flooring, and modern paint colors. The large backyard is perfect to build your dream pool or large family gatherings. With a little TLC, this home is sure to shine.",
+    status: Sale
+});
+apr.save();
+
+let apr;
+apr = new Apartment({
+    address: "Smith Ave SE, Albuquerque, NM 87106",
+    country: New Mexico,
+    price:900,
+    isExclusive: false,
+    roomsNumber: 2,
+    condition: "Updated Triplex apartment available for rent! 2 Bedroom 1 bath with an attached garage plus opener and private backyard in trendy Knob heights Washer/Dryer hookup in garage. All tile floors throughout with many updates! Close to KAFB and Nob Hill! Small pets welcome with a nonrefundable pet deposit of $150. Showings will start on July 25th.",
+    status: Rent
+});
+apr.save();
+
+let apr;
+apr = new Apartment({
+    address: "1405 Villa Los Ranchos NE, Albuquerque, NM 87113",
+    country: New Mexico,
+    price:179000,
+    isExclusive: true,
+    roomsNumber: 3,
+    condition: "Great Home! Excellent open floor plan. Peaceful, Serene Quiet Cul-de-Sac. Natural light throughout. Three bedrooms upstairs. Inviting master suite with walk in closet. This Lot location is Awesome. Low Maintenance Front Yard.  This One Owner home is Pristine and has been Immaculately Cared for. Recently updated Please do yourself a favor and take a look at this one, you'll be glad you did.",
+    status: Sale
+});
+apr.save();
+
+let apr;
+apr = new Apartment({
+    address: "2424 Teakwood Ln, Helena, MT 59601",
+    country: Montana,
+    price:259000,
+    isExclusive: true,
+    roomsNumber: 3,
+    condition: "Single-level  3 bedroom 2 bath home in great neighborhood.   Home has  lots of natural light, and very tastefully and professionally landscaped.Perfect for entertaining both inside & out.",
+    status: Sale
+});
+apr.save();
+
+let apr;
+apr = new Apartment({
+    address: "1400 Burns St UNIT 8, Missoula, MT 59802",
+    country: Montana,
+    price:148000,
+    isExclusive: true,
+    roomsNumber: 2,
+    condition: "This 1075 square foot single family home has 2 bedrooms and 2.0 bathrooms. It is located at 1400 Burns St Missoula, Montana.",
+    status: Sale
+});
+apr.save();
+
+let apr;
+apr = new Apartment({
+    address: "1005 Meadowbrook Dr, Fort Collins, CO 80521",
+    country: Colorado,
+    price:1950,
+    isExclusive: false,
+    roomsNumber: 3,
+    condition: "Must see! Well maintained ranch style 3 bedroom 1 3/4 bath house with gas fireplace and hardwood floors. Newly remodeled full bath with heated floors. Close to shopping and CSU. Beautifully landscaped yard featuring drought resistant plants, large patio area and a deck. Small/medium dogs will be considered. Rental Terms: Rent: $1,950, Application Fee: $50, Security Deposit: $1,950, Available 7/29/19 Pet Policy: Cats not allowed, Small dogs allowed Contact us to schedule a showing.",
+    status: Rent
+});
+apr.save();
+
+let apr;
+apr = new Apartment({
+    address: "1276 County Road 129, Glenwood Springs, CO 81601",
+    country: Washington,
+    price:650000,
+    isExclusive: true,
+    roomsNumber: 3,
+    condition: "The location on the Glenwood Canyon Bike trail. The Colorado River. No Name Creek and trail, Grizzly Creek and trail, Canyon views and the Hot Springs right down the road. Water rights and two shares of No Name Creek Water Association water with Apple and Cherry trees on 1.4 acres. USDA Zero Percent down loan eligible!",
+    status: Sale
+});
+apr.save();
+
+let apr;
+apr = new Apartment({
+    address: "Twin Peaks Rd, Selah, WA 98942",
+    country: Washington,
+    price:1950,
+    isExclusive: false,
+    roomsNumber: 3,
+    condition: "Selah home in Country available for rent. 3 bedroom, 2.5 bathroom with large bonus room and two bay shop. Irrigated property, yard care included. View, acreage, elbow room! Pets considered on a case by case basis.",
+    status: Rent
+});
+apr.save();
+
+
+
+
